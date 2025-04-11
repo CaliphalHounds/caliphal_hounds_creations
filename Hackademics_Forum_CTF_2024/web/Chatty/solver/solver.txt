@@ -1,0 +1,4 @@
+La funcionalidad de buscar mensajes se realiza antes de filtrar la flag, esta utiliza re.search() lo que basicamente utiliza la regex que introduce el usuario. Es posible introducir regex que tarden X mucho tiempo en cargar y de esa forma ir sacando la flag.
+
+Por ejemplo si vas a http://143.47.58.184:37000/posts?user_id=1&search=hfctf{a((((((((((((((.*)*)*)*)*)*)*)*)*)*)*)*)*)*)*! se ve que la pagina responde enseguida, pero si vas a http://143.47.58.184:37000/posts?user_id=1&search=hfctf{g((((((((((((((.*)*)*)*)*)*)*)*)*)*)*)*)*)*)*! la pagina de un timeout
+De esta forma se puede ir sacando la flag caracter a caracter

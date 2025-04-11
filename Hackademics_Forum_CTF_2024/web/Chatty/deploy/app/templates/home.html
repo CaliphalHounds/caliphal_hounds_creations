@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chatty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: url(https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-lakescape-landscape-nature-scenery-hd-image_2950137.jpg) no-repeat;
+        height: 100vh;
+        font-family: sans-serif;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow: hidden
+    }
+
+    @media screen and (max-width: 600px ) {
+        body {
+            background-size: cover;
+        }
+    }
+
+    #particles-js {
+        height: 100%
+    }
+
+    h2 {
+        padding: 0 0 20px;
+        color: #000000;
+        text-align: center;
+        font-size: 70px;
+    }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+      form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+ label {
+            margin-top: 10px;
+            display: block;
+            color: #666;
+        }
+
+        input[type="text"],
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* Asegura que padding no aumente el tamaño */
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+         .but {
+            display: inline-block;
+            background-color: #003BFF;
+            color: white;
+            padding: 10px;
+            margin: 3% 15% 3%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .but:hover {
+            background-color: #0056b3;
+        }
+
+</style>
+
+<body>
+    <div class="container">
+        <h2>New Post</h2>
+        <form action="insertPosts" method="post">
+            <label for="content">Comment:</label><br>
+            <textarea id="content" name="content" rows="4" required></textarea><br>
+    
+            <input type="submit" value="Post Comment">
+        </form>
+
+    
+    <button class="but" onclick="window.location.href='/posts?user_id={{user_id}}&search='">My comments</button>
+    <button class="but" onclick="window.location.href='/posts'">All comments</button>
+
+    </div>
+</body>
+
+</html>

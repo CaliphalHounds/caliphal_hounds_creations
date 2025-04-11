@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chatty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: url(https://scoop-cms.s3-eu-west-1.amazonaws.com/55e853c7ca2f3a596c8b4568/reshot-min.jpg) no-repeat;
+        height: 100vh;
+        font-family: sans-serif;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow: hidden
+    }
+
+    @media screen and (max-width: 600px ) {
+        body {
+            background-size: cover;
+        }
+    }
+
+    #particles-js {
+        height: 100%
+    }
+
+    .loginBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 550px;
+        min-height: 200px;
+        background: #050505;
+        border-radius: 3px;
+        padding: 40px;
+        box-sizing: border-box
+    }
+
+    .user {
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 20px
+    }
+
+    h3 {
+        margin: 0;
+        padding: 0 0 20px;
+        color: #FFFFFF;
+        text-align: center
+    }
+
+    .loginBox input {
+        width: 100%;
+        margin-bottom: 20px
+    }
+
+    .loginBox input[type="text"],
+    .loginBox input[type="password"] {
+        border: none;
+        border-bottom: 2px solid #262626;
+        outline: none;
+        height: 40px;
+        color: #fff;
+        background: transparent;
+        font-size: 16px;
+        padding-left: 20px;
+        box-sizing: border-box
+    }
+
+    .loginBox input[type="text"]:hover,
+    .loginBox input[type="password"]:hover {
+        color: #FFFFFF;
+        border: 1px solid #FFFFFF;
+        box-shadow: 0 0 5px rgba(0, 255, 0, .3), 0 0 10px rgba(0, 255, 0, .2), 0 0 15px rgba(0, 255, 0, .1), 0 2px 0 black
+    }
+
+    .loginBox input[type="text"]:focus,
+    .loginBox input[type="password"]:focus {
+        border-bottom: 2px solid #42F3FA
+    }
+
+    .inputBox {
+        position: relative
+    }
+
+    .inputBox span {
+        position: absolute;
+        top: 10px;
+        color: #262626
+    }
+
+    .loginBox input[type="submit"] {
+        border: none;
+        outline: none;
+        height: 40px;
+        font-size: 16px;
+        background: #59238F;
+        color: #fff;
+        border-radius: 20px;
+        cursor: pointer
+    }
+
+    .loginBox a {
+        color: #262626;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        display: block
+    }
+
+    a:hover {
+        color: #ffffff
+    }
+
+    p {
+        color: #0000ff
+    }
+</style>
+
+<body>
+
+    <div class="loginBox">
+        <h3>
+            {% if login_page == True %}
+                Sign In
+            {% else %}
+                Register
+            {% endif %}
+        </h3>
+        <p class="text-center" style="color: red;">{{ error }}</p>
+        <form action="{% if login_page == True %}login{% else %}register{% endif %}" method="post">
+            <div class="inputBox">
+                <input id="username" type="text" name="username" placeholder="Username">
+                <input id="password" type="password" name="password" placeholder="Password"> </div> 
+                <input id="submit" type="submit" name="" value="{% if login_page == True %}Login{% else %}Register{% endif %}">
+        </form>
+
+        {% if login_page == True %}
+        <a href="/register">
+            Sign-Up
+        </a>
+        {% endif %}
+
+
+    </div>
+
+</body>
+
+</html>

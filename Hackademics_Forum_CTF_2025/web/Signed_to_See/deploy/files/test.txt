@@ -1,0 +1,4 @@
+
+This is the test.txt file.
+
+If you can read this, the Secure File Viewer is working fine and the secret signature you provided is valid!
